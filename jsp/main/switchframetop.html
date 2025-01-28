@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+<title>显示/隐藏顶部标题栏</title>
+
+<script type="text/javascript"	src="../../common/js/jquery.js"></script>
+<script language="javascript" type="text/javascript"  defer="defer">
+
+// function Submit_onclick(){
+// alert("00000000000333333");
+// alert(parent.myFrame.cols);
+// alert(window.parent.document.getElementById("myFrame"));
+// var ww = window.parent.document.getElementById("myFrame");
+
+// alert(ww.cols);
+// 	if(parent.midFrametop.rows == "199,7,*") {
+// 		parent.midFrametop.rows="0,7,*";
+// 		document.getElementById("ImgArrow").src="../../common/image/main/switch_down.gif";
+// 		document.getElementById("ImgArrow").title="打开顶部标题栏";
+// 	} else {
+// 		parent.midFrametop.rows="199,7,*";
+// 		document.getElementById("ImgArrow").src="../../common/image/main/switch_up.gif";
+// 		document.getElementById("ImgArrow").title="隐藏顶部标题栏";
+// 	}
+// }
+
+// function MyLoad() {
+// 	if(window.parent.location.href.indexOf("MainUrl")>0) {
+// 		window.top.midFrametop.document.getElementById("ImgArrow").src="../../common/image/main/switch_up.gif";
+// 	}
+// }
+$(function(){
+
+
+$('#switchpic').toggle(
+	function(){
+	$("#parentFrame",parent.document).attr("rows","0,7,*");
+// 	alert($("#mainFrame",window.top));
+	$("#left",parent.document).attr("rows","0,7");
+	//var aa = window.top.myFrame.window.mainFrame;
+// 	var aa = window.top.frames['manFrame'].location;
+// 	alert(aa);
+// 	window.top.frames['left'].rows="0,7";
+// 	$("#mainFrame",parent.myFrame.document.left).attr("rows","0,7,*");
+		$("#ImgArrow").attr("src","../../common/image/main/switch_down.gif");
+		$("#ImgArrow").attr("title","打开顶部标题栏");
+	},
+	function(){
+		$("#parentFrame",parent.document).attr("rows","55,7,*");
+		window.top.frames['left'].rows="33,*";
+		$("#left",parent.document).attr("rows","35,*");
+// 		$("#mainFrame",parent.myFrame.document.left).attr("rows","55,7,*");
+		$("#ImgArrow").attr("src","../../common/image/main/switch_up.gif");
+		$("#ImgArrow").attr("title","隐藏顶部标题栏");
+	}
+);
+
+
+});
+
+
+</script>
+</head>
+<body  style="background-color:#FFFFFF;margin:0px">
+<div id="switchpic" style="margin-top:0px;margin-left:50%;margin-right:50%;"><a href="#" style="border:0;color: #555;text-decoration:none;"><img border="0" src="../../common/image/main/switch_up.gif" alt="隐藏顶部标题栏" id="ImgArrow" /></a></div>
+</body>
+</html>
